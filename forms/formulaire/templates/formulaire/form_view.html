@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+
+{%load static%}
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ensias Formes</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="{%static 'main/plugins/images/logo-icon.png'%}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+	<link rel="stylesheet" href="{%static 'main/css/bootstrap-side-modals.css'%}" />
+  <link href="{%static 'main/vendor/aos/aos.css'%}" rel="stylesheet">
+  <link href="{%static 'main/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{%static 'main/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{%static 'main/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{%static 'main/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{%static 'main/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap" rel="stylesheet">
+ 
+  <style>
+    .dropdown-menu{
+        border-radius: 5px;
+        padding: 5px 2px;
+    }
+    .dropdown-menu a{
+        color: rgb(226, 85, 109);
+        background-color: #f6f7ff;
+        
+    }
+    .dropdown-menu a:first-child{
+        border-bottom: #b8054f 1px solid;
+    }
+    .dropdown-menu a:hover{
+        color: #fff;
+        background-color:rgb(226, 85, 109) ;
+    }
+    .errorlist {
+        padding: 3px;
+        list-style-type: none;
+        color: rgb(255, 5, 5);
+    }
+    .breadcrumb-item a:hover{
+        text-decoration: underline;
+    }
+
+    .info {
+      border: 0px;
+      border-bottom:#ee8eb6 .2px solid;
+      width: 90%;
+      margin: 10px auto;
+      font-family: "New Tegomin";
+      outline: none!important;
+
+    }
+    
+    .modal.custom .modal-dialog {
+    width:20%;
+    position:fixed;
+        bottom:0px;
+        right:0px;
+        margin:0px;
+
+}
+    .info:nth-child(1){
+      font-size: 60px;
+      text-align: center;
+    }
+    .info:nth-child(2){
+      font-size: 23px;
+    }
+    .info:nth-child(1):focus{
+      border-left: #ec4289 6px solid;
+      border-radius: 5px;
+      border-top: #ee8eb6 .2px solid;
+      height: 60px;
+     
+    }
+    .info:nth-child(2):focus{
+      transform: translateX(20px);
+    }
+    .wrapper-quest{
+        border: #f3c1d6 1px solid;
+        border-radius: 5px;
+        width: 750px;
+        padding: 5px;
+        margin: 10px auto;
+        border-top: #f0649e 8px solid;
+        box-shadow: 6px 6px 8px rgb(150, 150, 150);
+    }
+    .rowActive{
+      border: #dd7aa3 1px solid;
+      border-top: #c4336f 8px solid;
+      
+    }
+    .question{
+      border: 0px;
+      border-bottom:#ee8eb6 .2px solid;
+      width: 90%;
+      margin: 10px auto;
+      font-family: "Bitter:wght";
+      outline: none!important;
+      font-size: 25px;
+      
+    }
+    body{
+      overflow-x: hidden;
+    }
+    .response:focus{
+      outline-color: #b6b6b6;
+    }
+    .response{
+      border-color: #dddcdc;
+      border-radius: 5px;
+    }
+    .bi-trash:hover{
+        color: #000000;
+        cursor: pointer;
+    }
+    .bi-trash{
+        margin: 0px 20px;
+    }
+    .additional-tools{
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 5px;
+
+    }
+    .additional-tools h5{
+      color: #eb1010;
+    }
+    
+    .is-required+span{
+      margin: 0px 5px;
+      font-weight: 200;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: #660029;
+    }
+   
+    input[type="checkbox"],input[type="radio"]{
+      filter: hue-rotate(120deg);
+    }
+    input[type="checkbox"],input[type="radio"]:hover{
+      cursor: pointer;
+      
+    }
+    .check-response{
+      border-bottom:rgba(244, 165, 96, 0.596) 1px solid;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 80%;
+      margin-left: 20px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      border-left: sandybrown 5px solid;
+    }
+    .option-response{
+      align-items: center;
+    }
+    .check-response input[type="checkbox"],input[type="radio"]{
+      width: 17px;
+      height: 17px;
+      margin: 0px 10px;
+
+    }
+    .check-response textarea{
+      border: 0px;
+      width: 70%;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      outline: none!important;
+      font-size: 20px;
+    }
+    .check-response textarea:visited{
+      padding-top: 10px;
+    }
+   
+    input:focus,textarea:focus{
+      opacity: 1;
+    }
+    .bi-dash-circle{
+      color: red;
+      font-size:18px;
+    }
+    .bi-dash-circle:hover{
+      color: rgb(129, 11, 11);
+      cursor: pointer;
+    }
+    .bi-plus-circle{
+      color: rgb(1, 202, 18);
+      font-size: 18px;
+      margin: auto 10px;
+    }
+    .bi-plus-circle:hover{
+      color: rgb(4, 87, 1);
+      cursor: pointer;
+    }
+    .modal-content{
+      background-color: #faf3f6;
+    }
+    button.model-btn{
+      position: absolute;
+      bottom: 10%;
+      right:50%;
+      transform: translateX(50%);
+      z-index: 1;
+      height: 50px;
+      width: 50px;
+      color: rgb(255, 255, 255);
+      background: rgb(250, 52, 52);
+      border-radius:50%;
+      box-shadow: rgb(250 52 52 / 90%) 0px 13px 19px -6px!important;
+      font-size: 40px;
+      text-align: center;
+    }
+    button.model-btn:hover{
+      color: rgb(255, 255, 255);
+      transition: all 0.5s ease 0s;
+      box-shadow: rgb(250 52 52  / 36%) 0px 0px 17px 0px!important;
+      background-color:rgb(250, 52, 52 ) !important ;
+    }
+    .btn{
+      text-align: start;
+    }
+
+    
+
+</style>
+
+</head>
+<body>
+
+
+  <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+  data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+  <header id="header" class="" style="background-color: #f6f7ff;">
+      <div style="background-color: #f6f7ff;" class=" header container d-flex align-items-center justify-content-between">
+  
+        <h1 class="logo"><a href="/">
+                    <b class="logo-icon">
+                              <!-- Dark Logo icon -->
+                                <img src="{%static 'main/images/initial/logo-icon.png'%}" alt="homepage" />
+                    </b>
+                          <!--End Logo icon -->
+                          <!-- Logo text -->
+                    <span class="logo-text">
+                              <!-- dark Logo text -->
+                          <img src="{%static 'main/images/initial/logo-text3.png'%}" alt="homepage" />
+                      </span>
+  
+        </a></h1>
+  
+        <nav id="navbar" class="navbar">
+          <div class="btn-group dropleft">
+              <button id="user" class="btn dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-user-circle bx-md"></i></button>
+              <div class="dropdown-menu" style="left: auto;right: 0px!important;" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item " href="/home"><i class="bx bx-user-pin bx-sm" ></i> <h3 style="display: inline; margin-left:12px; ">Home</h3></a>
+                <a class="dropdown-item" href="/logout"><i class="bx bx-log-out bx-sm" ></i><h3 style="display: inline;margin-left:12px; ">Logout</h3></a>
+              </div>
+            </div>
+        </nav><!-- .navbar -->
+  
+      </div>
+    </header><!-- End Header -->
+        
+
+
+<form method="POST" id="form" class="mt-3 mb-3">
+  {% csrf_token %}
+
+<div class="wrapper-title row " style="border: #f3c1d6 1px solid;width: 700px; box-shadow: 6px 6px 8px rgb(150, 150, 150); border-radius: 5px;padding: 5px; margin: 10px auto 30px auto; border-top: #b8054f 20px solid;">
+      <h2 type="text" class="info " id="title" name="title" placeholder="Title"></h2>
+      <h5 class="desc d-block info " id="desc" type="text" name="desc" placeholder="Description"></h5>
+</div>
+<div id="form-body"></div>
+<input type="submit" class="btn btn-success mt-2" name="save-form" value="save">
+    
+   
+</form>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'main/vendor/aos/aos.js'%}"></script>
+ <script src="{% static 'main/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+ <script src="{% static 'main/vendor/glightbox/js/glightbox.min.js'%}"></script>
+ <script src="{% static 'main/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+ <script src="{% static 'main/vendor/swiper/swiper-bundle.min.js'%}"></script>
+
+<script src="{%static 'formulaire/js/form_view.js'%}?verison=10000"></script>
+<script src="{%static 'formulaire/js/send_submission.js'%}"></script>
+</body>
+ <!-- Vendor JS Files -->
+ 
+</html>

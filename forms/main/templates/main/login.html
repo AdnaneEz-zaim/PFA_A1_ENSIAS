@@ -1,0 +1,83 @@
+{% load static %}
+{% load widget_tweaks %}
+<html>
+ <head>
+     <meta charset='utf-8'>
+     <meta name='viewport' content='width=device-width, initial-scale=1'>
+     <title>page login</title>
+     <link href="{%static 'main/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+     <link href="{%static 'main/css/styleLogin.css' %}" rel="stylesheet">
+</head>
+ <body oncontextmenu='return false' class='snippet-body'>
+        <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto" id="logincard">
+            <div class="card card0 border-0">
+                <div class="row d-flex">
+                    <div class="col-lg-6">
+                        <div class="card1 pb-5">
+                            <a href="{% url 'index' %}">
+                            <div class="row logo">
+
+                                    <div class="imglogo">
+                                        <img src="{%static 'main/plugins/images/logo-text.png' %}" alt="homepage" />
+                                    </div>
+
+                            </div>
+                            </a>
+                            <div class="row px-3 justify-content-center mt-4 mb-5 border-line " id="imagecont"> <img src="{%static 'main/plugins/images/photo1.jpg' %}" class="image"> </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="titre">
+                                    <h2 >S'identifier</h2>
+                        </div>
+
+                        <div class="card2 card border-0 px-4 py-5">
+
+
+                            {% for message in messages %}
+                                    <div class="alert alert-warning" role="alert">
+                                        <small class="text-danger text-center">{{message}}</small>
+                                    </div>
+                            {% endfor %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="row px-3">
+                                <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Nom d'utilisateur</h6>
+                                </label>
+
+                                <input class="mb-4" type="text" name="username" placeholder="Nom d'utilisateur ...">
+                            </div>
+
+                                <div class="row px-3">
+
+                                <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Password</h6>
+                                </label>
+
+                                <input type="password" name="password" placeholder="Password...">
+                            </div>
+                                <div class="obliermod">
+                                    <a href="#"  >Mot de passe oublié?</a>
+                                </div>
+
+
+
+                             <button type="submit" class="btn btn-blue text-center">Login</button>
+                             <div><strong>Vous n'avez pas de compte?  </strong><a class="text-danger" href="{% url 'register' %}" >Enregistrez-vous</a></div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bg-blue py-4">
+                    <div class="Copyright">
+                        <small >Copyright &copy; Ensias-Formes</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

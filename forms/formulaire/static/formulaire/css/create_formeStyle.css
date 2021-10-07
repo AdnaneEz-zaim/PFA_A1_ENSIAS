@@ -1,0 +1,207 @@
+
+    .errorlist {
+        padding: 3px;
+        list-style-type: none;
+        color: rgb(255, 5, 5);
+    }
+    .breadcrumb-item a:hover{
+        text-decoration: underline;
+    }
+
+
+.modal.custom .modal-dialog {
+    width:20%;
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    margin:0px;
+
+}
+
+
+    .wrapper-quest{
+        border: #f3c1d6 1px solid;
+        border-radius: 5px;
+        width: 750px;
+        padding: 5px;
+        margin: 10px auto;
+        border-top: #f0649e 8px solid;
+        box-shadow: 6px 6px 8px rgb(150, 150, 150);
+    }
+    .rowActive{
+      border: #dd7aa3 1px solid;
+      border-top: #c4336f 8px solid;
+
+    }
+    .question{
+      border: 0px;
+      border-bottom:#ee8eb6 .2px solid;
+      width: 90%;
+      margin: 10px auto;
+      font-family: "Bitter:wght";
+      outline: none!important;
+      font-size: 20px;
+
+    }
+    body{
+      overflow-x: hidden;
+    }
+    .response:focus{
+      outline-color: #b6b6b6;
+    }
+    .response{
+      border-color: #dddcdc;
+      border-radius: 5px;
+    }
+    .bi-trash:hover{
+        color: #000000;
+        cursor: pointer;
+    }
+    .bi-trash{
+        margin: 0px 20px;
+    }
+    .additional-tools{
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 5px;
+    }
+    .is-required+span{
+      margin: 0px 5px;
+      font-weight: 200;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: #660029;
+    }
+
+    input[type="checkbox"],input[type="radio"]{
+      filter: hue-rotate(120deg);
+    }
+    input[type="checkbox"],input[type="radio"]:hover{
+      cursor: pointer;
+
+    }
+    .check-response{
+      border-bottom:rgba(244, 165, 96, 0.596) 1px solid;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 80%;
+      margin-left: 20px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      border-left: sandybrown 5px solid;
+    }
+    .option-response{
+      align-items: center;
+    }
+    .check-response input[type="checkbox"],input[type="radio"]{
+      width: 17px;
+      height: 17px;
+      margin: 0px 10px;
+
+    }
+    .check-response textarea{
+      border: 0px;
+      width: 70%;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      outline: none!important;
+      font-size: 20px;
+    }
+    .check-response textarea:visited{
+      padding-top: 10px;
+    }
+
+    input,textarea{
+      opacity: 70%;
+    }
+
+    input:focus,textarea:focus{
+      opacity: 1;
+    }
+    .bi-dash-circle{
+      color: red;
+      font-size:18px;
+    }
+    .bi-dash-circle:hover{
+      color: rgb(129, 11, 11);
+      cursor: pointer;
+    }
+    .bi-plus-circle{
+      color: rgb(1, 202, 18);
+      font-size: 18px;
+      margin: auto 10px;
+    }
+    .bi-plus-circle:hover{
+      color: rgb(4, 87, 1);
+      cursor: pointer;
+    }
+    .modal-content{
+      background-color: #faf3f6;
+    }
+    button.model-btn{
+      position: absolute;
+      bottom: 10%;
+      right:50%;
+      transform: translateX(50%);
+      z-index: 1;
+      height: 50px;
+      width: 50px;
+      color: rgb(255, 255, 255);
+      background: rgb(250, 52, 52);
+      border-radius:50%;
+      box-shadow: rgb(250 52 52 / 90%) 0px 13px 19px -6px!important;
+      font-size: 40px;
+      text-align: center;
+    }
+    button.model-btn:hover{
+      color: rgb(255, 255, 255);
+      transition: all 0.5s ease 0s;
+      box-shadow: rgb(250 52 52  / 36%) 0px 0px 17px 0px!important;
+      background-color:rgb(250, 52, 52 ) !important ;
+    }
+    .btn{
+      text-align: start;
+    }
+
+#create-form-nav{
+margin-top:12px;
+}
+.page-breadcrumb .breadcrumb {
+    background: 0 0;
+    margin-bottom: 0;
+    padding: 0;
+    margin-top: 8px;
+    font-size: 12px;
+}
+.conteneurtiteDes{
+    display: flex;
+    justify-content: flex-start;
+}
+.titreDiscrip{
+    border:#ff5c4c 1px solid;
+    width: 400px;
+    border: #ff5c4c  1px solid;
+    box-shadow: 6px 6px 8px rgb(150, 150, 150);
+    border-radius: 5px;
+    padding: 5px;
+    margin-left:12px;
+    margin-top:14px;
+    border-top: #ff5c4c 20px solid;
+}
+ .info:nth-child(1){
+      font-size: 20px;
+ }
+ .info:nth-child(2){
+      font-size: 20px;
+  }
+  .info {
+      border: 0px;
+      border-bottom:#ff5c4c .2px solid;
+      width: 90%;
+      margin: 10px auto;
+      font-family: "New Tegomin";
+      outline: none!important;
+
+    }
+
+
+

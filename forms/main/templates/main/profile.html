@@ -1,0 +1,206 @@
+{%load widget_tweaks%}
+
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>Ensias Formes</title>
+    <!-- Favicon icon -->
+    {%load static%}
+    <link rel="icon" type="image/png" sizes="16x16" href="{%static 'main/plugins/images/logo-icon.png'%}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Pour le stype de graphe 
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">-->
+    <!-- Custom CSS -->
+    <link href="{%static 'main/css/style.min.css'%}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .dropdown-menu{
+            border-radius: 5px;
+            padding: 5px 2px;
+        }
+        .dropdown-menu a{
+            color: rgb(226, 85, 109);
+            background-color: #f6f7ff;
+            
+        }
+        .dropdown-menu a:first-child{
+            border-bottom: #b8054f 1px solid;
+        }
+        .dropdown-menu a:hover{
+            color: #fff;
+            background-color:rgb(226, 85, 109) ;
+        }
+        .errorlist {
+            padding: 3px;
+            list-style-type: none;
+            color: rgb(255, 5, 5);
+        }
+        .breadcrumb-item a:hover{
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <header id="header" class="" style="background-color: #f6f7ff;">
+            <div style="background-color: #f6f7ff;" class=" header container d-flex align-items-center justify-content-between">
+        
+              <h1 class="logo"><a href="/">
+                                    <!-- dark Logo text -->
+                                <img src="{%static 'main/images/initial/logo-text.png'%}" alt="homepage" />
+                            </span>
+        
+              </a></h1>
+        
+              <nav id="navbar" class="navbar">
+                <div class="btn-group dropleft">
+                    <a id="user" class="btn dropdown-toggle"  data-toggle="dropdown"  aria-expanded="false" style="margin-bottom: 14px;"><i class="bx bx-user-circle bx-md"></i></a>
+                    <div class="dropdown-menu" style="left: auto;right: 0px!important;" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item " href="/home/"><i class="bx bx-user-pin bx-sm" ></i> <h3 style="display: inline; margin-left:12px; ">Home</h3></a>
+                      <a class="dropdown-item" href="/logout/"><i class="bx bx-log-out bx-sm" ></i><h3 style="display: inline;margin-left:12px; ">Logout</h3></a>
+                    </div>
+                  </div>
+              </nav><!-- .navbar -->
+        
+            </div>
+          </header><!-- End Header -->
+              
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+
+
+ <!-- ============================================================== -->
+ <!-- Bread crumb and right sidebar toggle -->
+  <!-- ============================================================== -->
+
+            <div class="page-breadcrumb bg-white" id="navigation">
+                <div class="row align-items-center d-flex " style="background-color: #E6E2E1;padding: 13px;margin-top:5px;">
+                    <div id="create-form-nav" class="row align-items-center">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                            <h4 class="page-title" style="padding: 15px;border-radius: 5px;">HOME/PROFIL </h4>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+                <!-- /.col-lg-12 -->
+           
+    <div class="container">
+           
+        <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+
+
+
+
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12 " style="max-width: 20rem; margin-left: -22; margin-right: 0;">
+                            <div class="card border  shadow-sm p-2 bg-light border" >
+                              <div class="card-header text-center" style="background-color: bisque;">
+                                    <img src="{%static 'main/images/profil/user.jpg'%}" class="thumb-lg" style="border-radius: 50%; " alt="error reloading img"></img>
+                              </div>
+                              <div class="card-body text-center">
+
+                                <h3 class="text-black mt-2">{{user.username}}</h3>
+                                  <h4 class="text-black mt-2">{{user.email}}</h4>
+                              </div>
+                              <div class="card-footer bg-transparent border-success text-center">
+                                  <a href="#" class="btn btn-success">
+                                      change pass
+                                  </a>
+                              </div>
+                            </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body pb-0">
+                                {%if not edit_pass%}
+                                <form class="form-horizontal form-material " method="POST" action="/profil/" >
+                                {%else%}
+                                <form class="form-horizontal form-material " method="POST" action="/profil/edit-password/" >
+                                {%endif%}
+                                    {{ form.non_field_errors }}
+                                    {% csrf_token %}
+                                    {%for field in form%}
+                                    {%if field is not form.password%}
+                                    <div class="form-group mb-4">
+                                        {{field.label_tag}}
+                                        <div class="col-md-12 border-bottom p-0">
+                                            {%render_field field required=True class="col-md-12 border-0 form-control"%}
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                        {%if form.is_bound%}
+                                        {%for err in field.errors%}
+                                        <ul class="errorlist"><li><i class="bx bxs-error bx-lg" style="margin-right: 5px;"></i><span style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">{{err}}</span></li></ul>
+                                        {%endfor%}
+                                        {%endif%}
+                                    {%endif%}
+                                   
+                                    </div>
+                                    {%endfor%}
+                                    
+                                    </div>
+                                    <div class="form-group mb-4" style="padding-left: 50px;margin-top: -10px;">
+                                        <div class="col-sm-12 ">
+                                            {%if not edit_pass%}
+                                            <button style="margin-left: -30px;" type="submit" name="update" id="update" class="btn btn-success">Update Profile</button>
+                                            <span style="margin-left: 10px;">Change your <a href="/profil/edit-password/">password</a> </span>
+                                            {%else%}
+                                            <button style="margin-left: 200px;" type="submit" name="change_pass" id="change_pass" class="btn btn-danger">change password</button>
+                                            <span style="margin-left: 10px;">update your <a href="/profil/">profil</a> </span>
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                </form>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+               
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            
+            <!-- footer -->
+            <footer class="footer text-center"> 2021 © ENSIAS FORMES <a
+                    href="#">ENSIAS.com</a>
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <script src="{%static 'main/js/profil.js'%}?version=110"></script>
+        <script>
+            $("#user").click(function(){
+                $(".dropdown-menu").slideToggle();
+            });
+            function checkpass(){
+                $("form").removeClass("was-validated");
+                // if($("#id_passw").val()=="red")return true;
+                // else return false;
+            }
+        </script>
+        
+</body>
+
+</html>

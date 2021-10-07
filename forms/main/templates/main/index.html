@@ -1,0 +1,275 @@
+{%extends "main/base.html"%}
+{%block css%}
+{%load static%}
+  <link href="{%static 'main/css/initial.css'%}" rel="stylesheet">
+{%endblock%}
+
+{%block bodyContent%}
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="/">
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                  <span class="logo-text">
+                            <!-- dark Logo text -->
+                        <img src="{%static 'main/images/initial/logo-text.png'%}" alt="homepage" />
+                    </span>
+
+      </a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link text-center scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#features">features</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'login' %}">Commencer</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+      <h1>Ensias Forms</h1>
+        <img src="{%static 'main/images/initial/photo1.jpg'%}" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features" data-aos="fade-up">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Features</h2>
+          
+        </div>
+
+        <div class="row content">
+          <div class="col-md-5 text-center align-self-center" data-aos="fade-right" data-aos-delay="100">
+            <img src="{%static 'main/images/initial/f2.png'%}" class="img-fluid" alt="could not be loaded">
+          </div>
+          <div class="col-md-7 align-self-center pt-4 " data-aos="fade-left" data-aos-delay="100">
+            <h3>Créer facilement des sondages et des formulaires.</h3>
+            <p class="fst-italic">
+               Utiliser Ensias Formes pour collecter les avis de vos clients et faire 
+               des sondages en un temps minimal.Créer des formulaires, envoyer les à 
+               et observer les résulats en temps réel.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> Plusieurs formes de questions sont disponibles.</li>
+              <li><i class="bi bi-check"></i> Bénéficier d'une fluidité satisfaisante dans la création de votre formulaire.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-6 align-self-center text-center order-1 order-md-2" data-aos="fade-left">
+              <img src="{%static 'main/images/initial/b1.png'%}" class="img-fluid" alt="could not be loaded">
+          </div>
+          <div class="col-md-6 align-self-center pt-5 order-2 order-md-1" data-aos="fade-right">
+            <h3>Envoyez des sondages d'aspect professionnel aux clients</h3>
+            
+            <p>
+             Bénéficier d'un certain nombre d'outils vous permettant de réaliser facilement des formulaires 
+             professionnels.    
+            </p>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-5 text-center align-self-center" data-aos="fade-right">
+              <img src="{%static 'main/images/initial/g.png'%}" class="img-fluid" alt="could not be loaded">
+          </div>
+          <div class="col-md-7 align-self-center pt-5" data-aos="fade-left">
+            <h3>Analyser facilement vos résultats grâce aux représentaions graphiques et statistiques</h3>
+            <p>Les résultats sont accompagnés d'un certain nombre de graphiques permettant d'avoir une idée statistique sur les données.</p>
+          </div>
+        </div>
+
+        
+
+      </div>
+    </section><!-- End Features Section -->
+
+    
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-3 d-flex order-3 align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-paper-plane"></i></div>
+              <h4 class="title"><a href="">Send your form to your clients</a></h4>
+              <p class="description">Get the information you want by sending your form to others.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 order-1 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box ">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Create forms</a></h4>
+              <p class="description">Creating forms has become easy with Ensias Forms.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3  order-2 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxs-pie-chart-alt-2"></i></div>
+              <h4 class="title"><a href="">Graphs and statistics</a></h4>
+              <p class="description">Analysis becomes  much easier with graphs  and charts afforded.</p>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>Efforts combined leads always to the best result.</p>
+        </div>
+
+        <div class="row justify-content-center">
+
+          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+                <img src="{%static 'main/images/initial/team-1.jpg'%}" class="img-fluid" alt="could not be loaded">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Adnane Ez-zaim</h4>
+                  <span>Ensias Student</span>
+                </div>
+                <div class="social">
+                  <a href="https://github.com/AdnaneEz-zaim"><i class="bi bi-github"></i></a>
+                  <a href=https://www.facebook.com/profile.php?id=100008427220223""><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/adnane_ezzaim/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/adnane-ezzaim-2315a61a5/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+                <img src="{%static 'main/images/initial/team-2.jpg'%}" class="img-fluid" alt="could not be loaded">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Karzazi Redouane</h4>
+                  <span>Ensias Student</span>
+                </div>
+                <div class="social">
+                  <a href="https://github.com/gitRedDev"><i class="bi bi-github"></i></a>
+                  <a href="https://www.facebook.com/samir.hilali.73/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/re_dou_ane/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/redouane-karzazi-0a301a207/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+   
+
+   
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Feel free to send us your feedbacks or questions.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>Our Address</h3>
+                  <p>Ensias adress</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>ensiasformes@gmail.com<br>ensias@gmail.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div  class="col-lg-6 mt-4 mt-md-0">
+            <form  action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" style="height: 141px;"name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+{%endblock%}
+
+{%block jsScript%}
+  <script src="{%static 'main/js/initial.js'%}"></script>
+{%endblock%}

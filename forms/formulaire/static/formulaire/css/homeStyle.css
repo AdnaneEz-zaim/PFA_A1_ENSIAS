@@ -1,0 +1,320 @@
+.chartist-tooltip {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  min-width: 5em;
+  padding: .5em;
+  background: #F4C63D;
+  color: #453D3F;
+  font-family: Oxygen,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-transition: opacity .2s linear;
+  -moz-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .2s linear; }
+  .chartist-tooltip:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-top-color: #F4C63D; }
+  .chartist-tooltip.tooltip-show {
+    opacity: 1; }
+
+.ct-area, .ct-line {
+  pointer-events: none; }
+
+/*# sourceMappingURL=chartist-plugin-tooltip.css.map */
+.fixNavigation{
+ z-index: 9999;
+ position: fixed;
+ top: 0;
+ /* Mise en forme */
+ width: 100%; /* <-- Largeur de votre site */
+ background-color: #adb5bd;
+ }
+
+ .align-items-center {
+
+    background-color: #e8e8f0;
+}
+/*por la page de profile*/
+.user-bg{
+  background-color:#ffc107;
+}
+.overlay-box{
+    background-color:#ffc107;
+}
+#ProfileBtnCree{
+  background-color: #e8e8f0;
+  border-color: #e8e8f0;
+  color: #e8e8f0;
+}
+#main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin5] {
+    background: #f33155;
+}
+.footer{
+    position:absolute;
+   bottom:0;
+   width:100%;
+}
+
+/*gggggggggggggggggggggggggggggggggggggggggg*/
+.section_our_solution .row {
+  align-items: center;
+}
+
+.our_solution_category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.our_solution_category .solution_cards_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.solution_cards_box .solution_card {
+  flex: 0 50%;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+  border-radius: 15px;
+  margin: 8px;
+  padding: 10px 15px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 265px;
+  transition: 0.7s;
+}
+
+.solution_cards_box .solution_card:hover {
+  background:#ff5c4c;
+  /*#309df0;*/
+  color: #fff;
+  transform: scale(1.1);
+  z-index: 9;
+}
+
+.solution_cards_box .solution_card:hover::before {
+  background: rgb(85 108 214 / 10%);
+}
+
+.solution_cards_box .solution_card:hover .solu_title h3,
+.solution_cards_box .solution_card:hover .solu_description p {
+  color: #fff;
+}
+.solution_cards_box .solution_card:hover .solu_description strong {
+  color: #fff;
+}
+.solution_cards_box .solution_card:hover .controle path {
+  fill :#fff;
+}
+
+.solution_cards_box .solution_card:before {
+  content: "";
+  position: absolute;
+  background: rgb(85 108 214 / 5%);
+  width: 170px;
+  height: 400px;
+  z-index: -1;
+  transform: rotate(ff5c4c);
+  right: -56px;
+  top: -23px;
+  border-radius: 35px;
+}
+
+.solution_cards_box .solution_card:hover .solu_description button {
+  background: #fff !important;
+  color: #ff5c4c;
+}
+
+
+
+.div1 {
+display:flex;
+justify-content:space-between;
+}
+
+.solution_card .solu_title h3 {
+  color: #212121;
+  font-size: 1.3rem;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+.solution_card .solu_description p {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.solution_card .solu_description button {
+  border: 0;
+  border-radius: 15px;
+  background: linear-gradient(
+    140deg,
+    #ff5c4c 0%,
+    #ff5c4c 50%,
+    #ff5c4cc7 75%
+  ) !important;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 5px 16px;
+}
+
+.our_solution_content h1 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+.our_solution_content p {
+}
+
+.hover_color_bubble {
+  position: absolute;
+  background: rgb(54 81 207 / 15%);
+  width: 100rem;
+  height: 100rem;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  top: 16rem;
+  border-radius: 50%;
+  transform: rotate(-36deg);
+  left: -18rem;
+  transition: 0.7s;
+}
+
+.solution_cards_box .solution_card:hover .hover_color_bubble {
+  top: 0rem;
+}
+
+.solution_cards_box .solution_card .so_top_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solution_cards_box .solution_card .so_top_icon img {
+  width: 40px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/*start media query*/
+@media screen and (min-width: 320px) {
+  .sol_card_top_3 {
+    position: relative;
+    top: 0;
+  }
+
+  .our_solution_category {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .our_solution_category .solution_cards_box {
+    flex: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .our_solution_category .solution_cards_box {
+    flex: 1;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .sol_card_top_3 {
+    position: relative;
+    top: -3rem;
+  }
+  .our_solution_category {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+*{
+box-sizing:border-box;
+}
+strong{
+color:#ff5c4c;
+}
+
+.date{
+color:#A69F9D;
+}
+
+.controle:hover{
+    color:#fff;
+    cursor:pointer;
+}
+.controle{
+  margin-top:7px;
+}
+
+.dropdown-menu[style] {
+    overflow:visible!important;
+    right:0!important;
+    margin-top:30px!important;
+}
+#pricipaleDr {
+  margin-top:0px!important;
+}
+a {
+    color: rgba(0,0,255,0);
+}
+a:hover {
+    color: rgba(0,0,0,0);
+}
+/* botton on pff*/
+.form-check{
+    display: flex;
+    justify-content: space-between;
+}
+.form-check-input{
+margin-top:10px!important;
+margin-right:10px!important;
+margin-bottom:-8px!important;
+}
+.form-check-label{
+margin-top:5px!important;
+margin-left:-25px!important;
+margin-bottom:-6px!important;
+}
+.deletebtn{
+margin-left:50px!important;
+background-color:rgba(2,2,2,0);
+border: 0px;
+color: red;
+}
+/*pup up creation new form*/
+.swal2-title{
+color:#ff5c4c!important;
+}
+.swal2-styled.swal2-confirm{
+background:#ff5c4c!important;
+}
+.createforminput{
+border: 1px solid #ff5c4c;
+font-size:16px;
+}
+#afichermore{
+color:#fff;
+}
+
+.solution_cards_box .solution_card:hover #afichermore {
+  color: #ff5c4c;
+}

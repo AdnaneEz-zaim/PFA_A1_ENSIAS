@@ -1,0 +1,96 @@
+{% load static %}
+{% load widget_tweaks %}
+<html>
+ <head>
+     <meta charset='utf-8'>
+     <meta name='viewport' content='width=device-width, initial-scale=1'>
+     <title>page login</title>
+     <link href="{%static 'main/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+     <link href="{%static 'main/css/styleLogin.css' %}" rel="stylesheet">
+</head>
+ <body oncontextmenu='return false' class='snippet-body'>
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto" id="logincard">
+    <div class="card card0 border-0">
+        <div class="row d-flex">
+            <div class="col-lg-6">
+                <div class="card1 pb-5">
+                    <a href="{% url 'index' %}">
+                    <div class="row logo">
+
+                            <div class="imglogo">
+<!--                                <b class="logo-icon">-->
+<!--                                       <img src="{%static 'main/plugins/images/logo-icon.png' %}" alt="homepage" />-->
+<!--                                </b>-->
+
+                                <span class="logo-text">
+                                      <img src="{%static 'main/plugins/images/logo-text.png' %}" alt="homepage" />
+                                </span>
+                            </div>
+
+                    </div>
+                        </a>
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line " id="imagecont"> <img src="{%static 'main/plugins/images/photo1.jpg' %}" class="image"> </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="titre">
+                            <h2>Enregistrez-vous</h2>
+                        </div>
+
+                <div class="card2 card border-0 px-4 py-5" >
+                    <form method="post" id="form" >
+                        {% csrf_token %}
+
+                        {% for field in form %}
+                            <div class="row form-group px-3">
+                              <label class="mb-1">
+                                  <h6 class="mb-0 text-sm">{{field.label_tag}}</h6>
+                              </label>
+
+                                {% if form.is_bound %}
+						            {% if field.errors %}
+                                          {% render_field field class="form_control is-invalid" %}
+                                          {% for error in field.errors %}
+                                            <div class="invalid-feedback">{{error}}</div>
+                                          {% endfor%}
+                                    {%else%}
+                                        {% render_field field class="form_control is-valid" %}
+                                    {% endif %}
+                                {% else%}
+                                    {% render_field field class="form_control" %}
+                                {% endif %}
+                            </div>
+					    {% endfor %}
+
+                     <button type="submit" class="btn btn-blue text-center">Enregistrez-vous</button>
+                         <div><strong>Vous avez déjà un compte?  </strong><a class="text-danger" href="{% url 'login' %}" >Connectez-vous</a></div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="bg-blue py-4">
+            <div class="Copyright">
+                <small >Copyright &copy; Ensias-Formes</small>
+            </div>
+        </div>
+    </div>
+</div>
+ <script>
+     var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Username..';
+		form_fields[2].placeholder='Prenom..';
+		form_fields[3].placeholder='Nom..';
+		form_fields[4].placeholder='Email..';
+		form_fields[5].placeholder='Entrer le mot de passe...';
+		form_fields[6].placeholder='Retaper le mot de passe...';
+
+
+
+		for (var field in form_fields){
+			form_fields[field].className += ' form-control'
+		}
+
+ </script>
+</body>
+</html>
